@@ -1,0 +1,13 @@
+services:
+  web:
+    build: ./app
+    image: ${DOCKER_REGISTRY}/${DOCKER_IMAGE}:${STATUS}-${BUILD_TAG:-latest}
+    restart: unless-stopped
+    volumes:
+      - /home/deploy/cloudflare/ssl:/etc/ssl/private:ro
+    environment:
+      DB_KEY: "${AT_BASE_ID}"
+      API_KEY: "${AT_API_KEY}"
+    ports:
+      - 443:443
+      - 80:80

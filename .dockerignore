@@ -1,0 +1,13 @@
+/bin/
+/lib/
+/include/
+/nginx/
+/.git/
+/__pycache__/
+/.git
+/.github
+/.gitignore
+pyvenv.cfg
+Dockerfile
+README.md
+.DS_Store
